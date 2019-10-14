@@ -83,9 +83,8 @@ for v in results["value"]:
     # catch any errors that would not unable us to download the
     # image
     except Exception as e:
-	print("NOT DOWNLOADED NOR SAVED")
+        print("NOT DOWNLOADED NOR SAVED")
 
 #        if type(e) in EXCEPTIONS:
- #           print("[INFO] skipping: {}".format(v["contentUrl"]))
-  #          continue
-
+#           print("[INFO] skipping: {}".format(v["contentUrl"]))
+#          continue

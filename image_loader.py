@@ -16,8 +16,8 @@ args = vars(ap.parse_args())
 # maximum number of results for a given search and (2) the group size
 # for results (maximum of 50 per request)
 API_KEY = "bee17bb9e6cd4fc981c878c62ce45bcc"
-MAX_RESULTS = 100000
-GROUP_SIZE = 100
+MAX_RESULTS = 100000000
+GROUP_SIZE = 500
 
 # set the endpoint API URL
 URL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
@@ -64,16 +64,17 @@ for offset in range(0, estNumResults, GROUP_SIZE):
         offset, offset + GROUP_SIZE, estNumResults))
 # loop over the results
 for v in results["value"]:
+    name = 0
     # try to download the image
     try:
         # make a request to download the image
         print("[INFO] fetching: {}".format(v["contentUrl"]))
         r = requests.get(v["contentUrl"], timeout=30)
-
+	name = name +1 
         # build the path to the output image
         ext = v["contentUrl"][v["contentUrl"].rfind("."):]
         p = os.path.sep.join([args["output"], "{}{}".format(
-            str(total).zfill(8), ext)])
+            str(name).zfill(8), ext)])
 
         # write the image to disk
         f = open(p, "wb")

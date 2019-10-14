@@ -22,3 +22,10 @@ GROUP_SIZE = 50
 
 # set the endpoint API URL
 URL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
+
+# when attempting to download images from the web both the Python
+# programming language and the requests library have a number of
+# exceptions that can be thrown so let's build a list of them now
+# so we can filter on them
+EXCEPTIONS = {IOError, FileNotFoundError, exceptions.RequestException, exceptions.HTTPError, exceptions.ConnectionError,
+              exceptions.Timeout}

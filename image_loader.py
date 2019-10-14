@@ -49,3 +49,16 @@ print("[INFO] {} total results for '{}'".format(estNumResults,
 
 # initialize the total number of images downloaded thus far
 total = 0
+
+# loop over the estimated number of results in `GROUP_SIZE` groups
+for offset in range(0, estNumResults, GROUP_SIZE):
+    # update the search parameters using the current offset, then
+    # make the request to fetch the results
+    print("[INFO] making request for group {}-{} of {}...".format(
+        offset, offset + GROUP_SIZE, estNumResults))
+    params["offset"] = offset
+    search = requests.get(URL, headers=headers, params=params)
+    search.raise_for_status()
+    results = search.json()
+    print("[INFO] saving images for group {}-{} of {}...".format(
+        offset, offset + GROUP_SIZE, estNumResults))

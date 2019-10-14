@@ -62,3 +62,30 @@ for offset in range(0, estNumResults, GROUP_SIZE):
     results = search.json()
     print("[INFO] saving images for group {}-{} of {}...".format(
         offset, offset + GROUP_SIZE, estNumResults))
+# loop over the results
+for v in results["value"]:
+    # try to download the image
+    try:
+        # make a request to download the image
+        print("[INFO] fetching: {}".format(v["contentUrl"]))
+        r = requests.get(v["contentUrl"], timeout=30)
+
+        # build the path to the output image
+        ext = v["contentUrl"][v["contentUrl"].rfind("."):]
+        p = os.path.sep.join([args["output"], "{}{}".format(
+            str(total).zfill(8), ext)])
+
+        # write the image to disk
+        f = open(p, "wb")
+        f.write(r.content)
+        f.close()
+
+    # catch any errors that would not unable us to download the
+    # image
+    except Exception as e:
+        # check to see if our exception is in our list of
+        # exceptions to check for
+        if type(e) in EXCEPTIONS:
+            print("[INFO] skipping: {}".format(v["contentUrl"]))
+            continue
+

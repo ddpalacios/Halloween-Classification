@@ -16,8 +16,8 @@ args = vars(ap.parse_args())
 # maximum number of results for a given search and (2) the group size
 # for results (maximum of 50 per request)
 API_KEY = "bee17bb9e6cd4fc981c878c62ce45bcc"
-MAX_RESULTS = 250
-GROUP_SIZE = 50
+MAX_RESULTS = 100000
+GROUP_SIZE = 100
 
 # set the endpoint API URL
 URL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
@@ -83,9 +83,9 @@ for v in results["value"]:
     # catch any errors that would not unable us to download the
     # image
     except Exception as e:
-        # check to see if our exception is in our list of
-        # exceptions to check for
-        if type(e) in EXCEPTIONS:
-            print("[INFO] skipping: {}".format(v["contentUrl"]))
-            continue
+	print("NOT DOWNLOADED NOR SAVED")
+
+#        if type(e) in EXCEPTIONS:
+ #           print("[INFO] skipping: {}".format(v["contentUrl"]))
+  #          continue
 

@@ -2,7 +2,7 @@
 
 Computer Vision model using Convolutional Neural Networks to 
 classify guest's efforts on their coustumes idea and be able to identify weather or not this coustumes reaches the 
-haloween expectations.  
+halloween expectations.  
 
 Plan #1 Retrive image dataset of good and bad halloween coustumes
 

@@ -21,11 +21,11 @@ This will provide you an array for the URL of every image that is within the pag
 
 **window.open('data:text/csv;charset=utf-8,' + escape(urls.join('\n')));**
 
-extract this file to the path of your IDE. open your terminal and run the following command: 
+Extract this file to the path of your IDE. open your terminal and run the following command: 
 
 **python3 image_loader2.py --URLs "FILENAME".txt --output datasets/"SUBDIRECTORY"** 
 
-after execution, you will see each URL being downloaded and saved under the specified subdirectory. **Note: You must replace what is within the quotation marks with your .txt file name as well as where you plan on saving these images.**
+After execution, you will see each URL being downloaded and saved under the specified subdirectory. **Note: You must replace what is within the quotation marks with your .txt file name as well as where you plan on saving these images.**
 
 (This will take a while to download. Be Patient)
 

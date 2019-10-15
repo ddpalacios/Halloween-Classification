@@ -4,7 +4,7 @@ Computer Vision model using Convolutional Neural Networks to
 classify guest's efforts on their costumes idea and be able to identify weather or not this costumes reaches the 
 halloween expectations.  
 
-Plan #1 Retrive image dataset of good and bad halloween coustumes --
+# Plan #1 Retrive image dataset of good and bad halloween coustumes --
 
 To a person's eye, there are many biases that determines what is determined to be 'basic'. This issue was put into perepective and the definition of being "basic" in Haloween is diffrentiated by different subgroups.  
 
@@ -15,19 +15,19 @@ Using image_loader2.py, we are able to download our images and label them into o
 
 To obtain images, head to google images and search (scroll down untill there are no more images) --> open JS terminal (ctrl+shift+I) and type in: 
 
-urls = Array.from(document.querySelectorAll('.rg_di .rg_meta')).map(el=>JSON.parse(el.textContent).ou);
+# urls = Array.from(document.querySelectorAll('.rg_di .rg_meta')).map(el=>JSON.parse(el.textContent).ou);
 
 This will provide you an array for the URL of every image that is within the page. 
 
 Next, type in this command to DOWNLOAD the .txt file of the urls
 
-window.open('data:text/csv;charset=utf-8,' + escape(urls.join('\n')));
+# window.open('data:text/csv;charset=utf-8,' + escape(urls.join('\n')));
 
 extract this file to your path of your IDE.
 
 open your terminal and run the following command: 
 
-python3 image_loader2.py --urls "FILENAME".txt --output datasets/"SUBDIRECTORY"
+# python3 image_loader2.py --urls "FILENAME".txt --output datasets/"SUBDIRECTORY"
 
 after exceution, you will see each url being downloaded and saved under the specifed subdirectory. 
 
@@ -36,7 +36,7 @@ Note: You must replace what is within the quotation marks with your own .txt fil
 (This will take a while to download. Be Patient)
 
 
-Plan #2 Image-PreProcess
+# Plan #2 Image-PreProcess
 
 
 

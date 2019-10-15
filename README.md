@@ -17,29 +17,20 @@ To obtain images, head to google images and search **(scroll down untill there a
 
 **urls = Array.from(document.querySelectorAll('.rg_di .rg_meta')).map(el=>JSON.parse(el.textContent).ou);**
 
-This will provide you an array for the URL of every image that is within the page. 
-
-Next, type in this command to DOWNLOAD the .txt file of the urls 
+This will provide you an array for the URL of every image that is within the page. Next, type in this command to **DOWNLOAD** the .txt file of the urls 
 
 **window.open('data:text/csv;charset=utf-8,' + escape(urls.join('\n')));**
 
-extract this file to your path of your IDE.
-
-open your terminal and run the following command: 
+extract this file to your path of your IDE. open your terminal and run the following command: 
 
 **python3 image_loader2.py --urls "FILENAME".txt --output datasets/"SUBDIRECTORY"** 
 
-after exceution, you will see each url being downloaded and saved under the specifed subdirectory. 
-
-**Note: You must replace what is within the quotation marks with your own .txt file name as well as where you plan on saving these images.** 
+after exceution, you will see each url being downloaded and saved under the specifed subdirectory. **Note: You must replace what is within the quotation marks with your own .txt file name as well as where you plan on saving these images.** 
 
 (This will take a while to download. Be Patient)
 
 
 # Plan #2 Image-PreProcess
-
-
-
 
 
 

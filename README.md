@@ -15,15 +15,15 @@ Using **image_loader2.py**, we can download our images and label them into our s
 
 To obtain images, head to google images and search **(scroll down untill there are no more images) --> open JS terminal** **(ctrl+shift+I)** and type in: 
 
-**urls = Array.from(document.querySelectorAll('.rg_di .rg_meta')).map(el=>JSON.parse(el.textContent).ou);**
+*urls = Array.from(document.querySelectorAll('.rg_di .rg_meta')).map(el=>JSON.parse(el.textContent).ou);*
 
 This will provide you an array for the URL of every image that is within the page. Next, type in this command to **DOWNLOAD** the .txt file of the URLs 
 
-**window.open('data:text/csv;charset=utf-8,' + escape(urls.join('\n')));**
+*window.open('data:text/csv;charset=utf-8,' + escape(urls.join('\n')));*
 
 Extract this file to the path of your IDE. open your terminal and run the following command: 
 
-**python3 image_loader2.py --URLs "FILENAME".txt --output datasets/"SUBDIRECTORY"** 
+*python3 image_loader2.py --URLs "FILENAME".txt --output datasets/"SUBDIRECTORY"* 
 
 After execution, you will see each URL being downloaded and saved under the specified subdirectory. **Note: You must replace what is within the quotation marks with your .txt file name as well as where you plan on saving these images.**
 

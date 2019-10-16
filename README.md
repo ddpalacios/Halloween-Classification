@@ -4,7 +4,7 @@ Computer Vision model using Convolutional Neural Networks to
 classify guest's efforts on their costumes idea and be able to identify weather or not this costumes reaches the 
 Halloween expectations.  
 
-# Plan #1 Retrieve image dataset of good and bad Haloween costumes --
+# Plan #1 Retrieve image dataset of good and bad Halloween costumes --
 
 To a person's eye, many biases determine what is determined to be 'basic'. This issue was put into perspective and the definition of being "basic" in Haloween is differentiated by different subgroups.  
 

@@ -1,8 +1,8 @@
-# Haloween-Classification
+# Halloween-Classification
 
 Computer Vision model using Convolutional Neural Networks to 
 classify guest's efforts on their costumes idea and be able to identify weather or not this costumes reaches the 
-Haloween expectations.  
+Halloween expectations.  
 
 # Plan #1 Retrieve image dataset of good and bad Haloween costumes --
 

@@ -48,28 +48,41 @@ for img_path in paths:
 print("there are {} bad file(s)".format(count))
 
 #########################
-# Turn image files to array
+# read image files --> np array
 ##########################
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-
 basic_train = []
 basic_test = []
 
 non_train = []
 non_test = []
 
-# for filename in listdir(train_basic_path):
-#     im = Image.open(train_basic_path+filename)
-#     np_im = np.array(im)
-#     print(np_im)
+for myFile in listdir(train_basic_path):
+    image = cv2.imread(train_basic_path + myFile)
+    image = cv2.resize(image, (25, 25))  # Temporary size
+    basic_train.append(image)
 
-import glob
-
-files = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TEST-BASIC/"
-for myFile in listdir(files):
-
-    image = cv2.imread(files+myFile)
+for myFile in listdir(test_basic_path):
+    image = cv2.imread(test_basic_path + myFile)
+    image = cv2.resize(image, (25, 25))
     basic_test.append(image)
 
+for myFile in listdir(train_non_path):
+    image = cv2.imread(train_non_path + myFile)
+    image = cv2.resize(image, (25, 25))
+    non_train.append(image)
+
+for myFile in listdir(test_non_path):
+    image = cv2.imread(test_non_path + myFile)
+    image = cv2.resize(image, (25, 25))
+    non_test.append(image)
+
+basic_train = np.array(basic_train)
 basic_test = np.array(basic_test)
+non_train = np.array(non_train)
+non_test = np.array(non_test)
+
+np.savez_compressed('halloween_classes.npz',
+                    basic_train=basic_train,
+                    basic_test=basic_test,
+                    non_train=non_train,
+                    non_test=non_test)

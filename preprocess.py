@@ -4,6 +4,7 @@ warnings.filterwarnings("ignore")
 from os import listdir
 from PIL import Image
 import os
+import numpy as np
 
 PATH = '/home/daniel/PycharmProjects/Halloween-Classification/datasets'
 train_basic_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TRAIN-BASIC/"
@@ -30,7 +31,7 @@ print("There are {} Basic TRAIN Images\nThere are {} TEST Basic Images".format(t
 # Check image validation
 #######################
 count = 0
-paths = [train_basic_path, test_basic_path, train_non_path,test_non_path]
+paths = [train_basic_path, test_basic_path, train_non_path, test_non_path]
 for img_path in paths:
     print("Checking...{}\n".format(img_path))
     for filename in listdir(img_path):
@@ -43,4 +44,38 @@ for img_path in paths:
                 print('Bad file:', filename)  # print out the names of corrupt files
                 count += 1
                 os.remove(img_path + filename)  # remove any bad files
-print("there are {} bad files".format(count))
+print("there are {} bad file(s)".format(count))
+
+#########################
+# Turn image files to array
+##########################
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+
+basic_train = []
+basic_test = []
+
+non_train = []
+non_test = []
+
+for filename in listdir(train_basic_path):
+    img = mpimg.imread("/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TRAIN-BASIC/" + filename)
+    basic_train.append(img)
+
+print(len(basic_train))
+# elif img_path == "/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TEST-BASIC/":
+#     print("appending: {}".format(img_path))
+#     for filename in listdir(img_path):
+#         img = mpimg.imread(img_path + filename)
+#         basic_test.append(img)
+#
+# elif img_path == "/home/daniel/PycharmProjects/Halloween-Classification/datasets/NON-BASIC/TRAIN-NON/":
+#     print("appending: {}".format(img_path))
+#     for filename in listdir(img_path):
+#         img = mpimg.imread(img_path + filename)
+#         non_train.append(img)
+# elif img_path == "/home/daniel/PycharmProjects/Halloween-Classification/datasets/NON-BASIC/TEST-NON/":
+#     print("appending: {}".format(img_path))
+#     for filename in listdir(img_path):
+#         img = mpimg.imread(img_path + filename)
+#         non_test.append(img)

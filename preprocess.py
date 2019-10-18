@@ -6,11 +6,11 @@ from PIL import Image
 import os
 
 PATH = '/home/daniel/PycharmProjects/Halloween-Classification/datasets'
-train_basic_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TRAIN-BASIC"
-test_basic_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TEST-BASIC"
+train_basic_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TRAIN-BASIC/"
+test_basic_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TEST-BASIC/"
 
-train_non_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/NON-BASIC/TRAIN-NON"
-test_non_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/NON-BASIC/TEST-NON"
+train_non_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/NON-BASIC/TRAIN-NON/"
+test_non_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/NON-BASIC/TEST-NON/"
 
 ####################
 # Image/classes count
@@ -30,15 +30,17 @@ print("There are {} Basic TRAIN Images\nThere are {} TEST Basic Images".format(t
 # Check image validation
 #######################
 count = 0
-img_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/NON-BASIC/TEST-NON/"
-for filename in listdir(img_path):
-    if filename.endswith('.jpg'):
-        try:
-            img = Image.open(img_path + filename)  # open the image file
-            img.verify()  # verify that it is, in fact an image
+paths = [train_basic_path, test_basic_path, train_non_path,test_non_path]
+for img_path in paths:
+    print("Checking...{}\n".format(img_path))
+    for filename in listdir(img_path):
+        if filename.endswith('.jpg'):
+            try:
+                img = Image.open(img_path + filename)  # open the image file
+                img.verify()  # verify that it is, in fact an image
 
-        except (IOError, SyntaxError) as e:
-            print('Bad file:', filename)  # print out the names of corrupt files
-            count += 1
-            os.remove(img_path + filename)  # remove any bad files
+            except (IOError, SyntaxError) as e:
+                print('Bad file:', filename)  # print out the names of corrupt files
+                count += 1
+                os.remove(img_path + filename)  # remove any bad files
 print("there are {} bad files".format(count))

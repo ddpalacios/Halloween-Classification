@@ -5,6 +5,7 @@ from os import listdir
 from PIL import Image
 import os
 import numpy as np
+import cv2
 
 PATH = '/home/daniel/PycharmProjects/Halloween-Classification/datasets'
 train_basic_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TRAIN-BASIC/"
@@ -58,24 +59,17 @@ basic_test = []
 non_train = []
 non_test = []
 
-for filename in listdir(train_basic_path):
-    img = mpimg.imread("/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TRAIN-BASIC/" + filename)
-    basic_train.append(img)
+# for filename in listdir(train_basic_path):
+#     im = Image.open(train_basic_path+filename)
+#     np_im = np.array(im)
+#     print(np_im)
 
-print(len(basic_train))
-# elif img_path == "/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TEST-BASIC/":
-#     print("appending: {}".format(img_path))
-#     for filename in listdir(img_path):
-#         img = mpimg.imread(img_path + filename)
-#         basic_test.append(img)
-#
-# elif img_path == "/home/daniel/PycharmProjects/Halloween-Classification/datasets/NON-BASIC/TRAIN-NON/":
-#     print("appending: {}".format(img_path))
-#     for filename in listdir(img_path):
-#         img = mpimg.imread(img_path + filename)
-#         non_train.append(img)
-# elif img_path == "/home/daniel/PycharmProjects/Halloween-Classification/datasets/NON-BASIC/TEST-NON/":
-#     print("appending: {}".format(img_path))
-#     for filename in listdir(img_path):
-#         img = mpimg.imread(img_path + filename)
-#         non_test.append(img)
+import glob
+
+files = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TEST-BASIC/"
+for myFile in listdir(files):
+
+    image = cv2.imread(files+myFile)
+    basic_test.append(image)
+
+basic_test = np.array(basic_test)

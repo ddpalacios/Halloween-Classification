@@ -6,7 +6,7 @@ from PIL import Image
 import os
 import numpy as np
 import cv2
-import pandas as pd
+
 
 PATH = '/home/daniel/PycharmProjects/Halloween-Classification/datasets'
 train_basic_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TRAIN-BASIC/"
@@ -57,28 +57,29 @@ train_labels = []
 test_labels = []
 non_train = []
 non_test = []
+SHAPE = 180
 
 for myFile in listdir(train_basic_path):
     image = cv2.imread(train_basic_path + myFile)
-    image = cv2.resize(image, (25, 25))  # Temporary size
+    image = cv2.resize(image, (SHAPE, SHAPE))  # Temporary size
     basic_train.append(image)
     train_labels.append(1)
 
 for myFile in listdir(test_basic_path):
     image = cv2.imread(test_basic_path + myFile)
-    image = cv2.resize(image, (25, 25))
+    image = cv2.resize(image, (SHAPE, SHAPE))
     basic_test.append(image)
     test_labels.append(1)
 
 for myFile in listdir(train_non_path):
     image = cv2.imread(train_non_path + myFile)
-    image = cv2.resize(image, (25, 25))
+    image = cv2.resize(image, (SHAPE, SHAPE))
     non_train.append(image)
     train_labels.append(0)
 
-for myFile in listdir(test_non_path):
+for myFile in listdir(test_non_path): 
     image = cv2.imread(test_non_path + myFile)
-    image = cv2.resize(image, (25, 25))
+    image = cv2.resize(image, (SHAPE, SHAPE))
     non_test.append(image)
     test_labels.append(0)
 

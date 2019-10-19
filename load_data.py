@@ -1,5 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import cv2
+
+
 
 
 class load_file:
@@ -15,3 +18,8 @@ class load_file:
 df = load_file('halloween_classes.npz')
 X_train, y_train, X_test, y_test = df.get_data()
 
+for i in range(30, 80):
+    image = cv2.cvtColor(X_train[i], cv2.COLOR_BGR2RGB)
+
+    plt.imshow(image)
+    plt.show()

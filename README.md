@@ -31,12 +31,13 @@ After execution, you will see each URL being downloaded and saved under the spec
 
 
 # Plan #2 Image-PreProcess
-
+**preprocess.py**
 Once we have the images within both directories **(Class 1 & Class 0**) We are now ready to **split the data 70% training images and 30% testing images**. There are several ways to days, however, this process was done manually. Both Class directories have **seperate folders of testing and training** but now, we need to **read these images, resize, convert them it numpy array, and save.** 
+
 We read these images using **CV2** (when reading images, the computer reads them as a matrix of values depending on its color hue). We need to save these values into our own list, then **take that list and use .savez_compressed()** to save the numpy array for later use for training. The values are saved under .npz file which is then loaded in *load_data.py.* When loaded, we have 4 variables, **X_train, X_test, y_train, and y_test**. X_train are the training images and its associated labels is the variable y_train (this **contains 1’s and 0’s** to indicate which class does the image in X_train belong to). This works the same way with the testing variables, except it is used as validation to see how well our potential model is so we can **further tune our model for best accuracy.** 
 
 
-Plan #3 Build model -- pending
+# Plan #3 Build model -- pending
 
 Plan #4 Train
 

@@ -6,6 +6,7 @@ from PIL import Image
 import os
 import numpy as np
 import cv2
+import pandas as pd
 
 PATH = '/home/daniel/PycharmProjects/Halloween-Classification/datasets'
 train_basic_path = "/home/daniel/PycharmProjects/Halloween-Classification/datasets/BASIC/TRAIN-BASIC/"
@@ -52,7 +53,8 @@ print("there are {} bad file(s)".format(count))
 ##########################
 basic_train = []
 basic_test = []
-
+train_labels = []
+test_labels = []
 non_train = []
 non_test = []
 
@@ -60,29 +62,38 @@ for myFile in listdir(train_basic_path):
     image = cv2.imread(train_basic_path + myFile)
     image = cv2.resize(image, (25, 25))  # Temporary size
     basic_train.append(image)
+    train_labels.append(1)
 
 for myFile in listdir(test_basic_path):
     image = cv2.imread(test_basic_path + myFile)
     image = cv2.resize(image, (25, 25))
     basic_test.append(image)
+    test_labels.append(1)
 
 for myFile in listdir(train_non_path):
     image = cv2.imread(train_non_path + myFile)
     image = cv2.resize(image, (25, 25))
     non_train.append(image)
+    train_labels.append(0)
 
 for myFile in listdir(test_non_path):
     image = cv2.imread(test_non_path + myFile)
     image = cv2.resize(image, (25, 25))
     non_test.append(image)
+    test_labels.append(0)
 
-basic_train = np.array(basic_train)
-basic_test = np.array(basic_test)
-non_train = np.array(non_train)
-non_test = np.array(non_test)
+X_train = basic_train + non_train
+y_train = train_labels
+X_test = basic_test + non_test
+y_test = test_labels
+
+X_train = np.array(X_train)
+y_train = np.array(y_train)
+X_test = np.array(X_test)
+y_test = np.array(y_test)
 
 np.savez_compressed('halloween_classes.npz',
-                    basic_train=basic_train,
-                    basic_test=basic_test,
-                    non_train=non_train,
-                    non_test=non_test)
+                    X_train=X_train,
+                    y_train=y_train,
+                    X_test=X_test,
+                    y_test=y_test)

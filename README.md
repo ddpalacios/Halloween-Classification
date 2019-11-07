@@ -1,5 +1,5 @@
 # Halloween-Classification
-**Please check out myCnn.ipynd file (in models) to check out the data/training progress**
+**Please check out myCnn.ipynb file (in models) to check out the data/training progress**
 
 Computer Vision model using Convolutional Neural Networks to 
 classify guest's efforts on their costumes idea and be able to identify weather or not this costumes reaches the 

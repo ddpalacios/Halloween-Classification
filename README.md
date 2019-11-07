@@ -39,8 +39,26 @@ to read these images,  use **CV2** (when reading images, the computer reads them
 
 
 # Plan #3 Build model
+Now that we have gotten this far within this project, it is time for us to start building this model.
 
-Plan #4 Train
+To start, I will be using **KERAS** to build my network. We are building a **Convolutional Neural Network** since the data (or images) we will be dealing with consists of specific patterns that we need to be able to diffrentiate between. For example, someone who is "Basic" could be wearing bunny ears or a devil costume while a non-basic person would be a very bad costume or as well as a well thought out one. The size of our model depends on our intuition on how well we will be able to identify every pattern that is given via image.
 
-Plan #5 allow access to camera,  use set weights to allow accurate classification when predicting
+
+
+# Plan #4 Train
+For training, this was a bit more tricky. Our goal is to minimize our cost and increase our validation accuracy, however, during training, I have stumbuled across the probelm of overfitting. This was a common issue since our training accuracy was a significantly higher percentage than the validation accuracy. However, this is mostly dealt with normalizing & maxpooling my data to decrease this. I also experimented with the resolution size, strides, ect. In the end, our final accuracy came to be **78%** which at first glance it is not that great. However, we must understand that defining who is basic or not is such a bias topic. Our model can say that this person IS basic, but in someone else's eyes, it could be the exact opposite. I beleive 78% was a great validation accuracy in order to catch any bias when predicting on new test data. 
+
+
+# Plan #5 allow access to camera
+There were two options to this... Using my phone camera to take pictures of peoples costumes and then feed it through my model or use the nvidea jetson camera to take the pictures. I found that the phone camera came out to have better results than the jetson nano.  Possibilites:  The camera is a wide open lens, both cameras take in different perspectives and have an effect when predicting final result.
+
+
+# Outcome
+After I had many people test out my model, there have been many discovories I have made for the various of different costumes from guests. The model looked for poses, what you were wearing, and how much you were wearing. 
+
+Someone who is making a "Sensual" pose is more likely to be in the basic catagory.  
+
+Someone who has a well thought costume could be more likely to be in the non-basic catagory.
+
+Again, this classification is extremely bias. However, many (or all) guests seemed to enjoy it eaither way, so I call this project a success. Obviously, it could be better. The dataset itself can be more throughly cleaned and in their correct catagories and the model could be expanded. Neverless, it still worked the way it supppsed to.  
 

@@ -1,0 +1,38 @@
+input_shape = (50,50,3)
+kernel_size = (1,1)
+batch_size = 64
+
+epochs = 50
+cnn4 = Sequential()
+cnn4.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=input_shape))
+cnn4.add(BatchNormalization())
+
+cnn4.add(Conv2D(32, kernel_size=(3, 3), activation='relu'))
+cnn4.add(BatchNormalization())
+cnn4.add(MaxPooling2D(pool_size=(2, 2)))
+cnn4.add(Dropout(0.15))
+
+cnn4.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
+cnn4.add(BatchNormalization())
+cnn4.add(Dropout(0.25))
+
+cnn4.add(Conv2D(128, kernel_size=(3, 3), activation='relu'))
+cnn4.add(BatchNormalization())
+cnn4.add(MaxPooling2D(pool_size=(2, 2)))
+cnn4.add(Dropout(0.50))
+
+cnn4.add(Flatten())
+
+cnn4.add(Dense(512, activation='relu'))
+cnn4.add(BatchNormalization())
+cnn4.add(Dropout(0.6))
+
+cnn4.add(Dense(128, activation='relu'))
+cnn4.add(BatchNormalization())
+cnn4.add(Dropout(0.6))
+
+cnn4.add(Dense(1, activation='sigmoid'))
+
+cnn4.compile(loss='binary_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])

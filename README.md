@@ -1,5 +1,25 @@
 # Halloween-Classification
-**Please check out myCnn.ipynb file (in models) to check out the data/training progress**
+
+
+
+# FOR VIEWING RESULTS PLEASE READ HERE
+**ZIP file MAY take a minute to load since it is loading all data**
+
+**There is NO need to run ANY application. There is simply too much to load and will take a while to load each model**
+However! Please check out model_78.ipynd **This notebook is where you will see how I prepared my own dataset as well as the resulted predictions with their cooresponding pictures**
+
+**That is NOT ALL** Please also check out the other notebooks which are two diffrent model architectures and how I dealt with over/underfitting. This was a big issue and it is necceassry to view the diffrences.  
+
+**METRICS --> please view model_80.ipynd & model_73.ipynd There are outputs already given for you within each shell**
+
+**Graphs & Saved models & Saved Data --> Please check out Directory "Saved_Models" as you will find sub folders for each cooresponding model. You will find:  Confusion matrix,  Accuracy graph results, and loss results (training & validation) ALL in PNG file as well as the model architecture used that recievied the following results**
+
+**Note** python file "google_image_extractor.py" is the script I used to extract all images from google images
+
+**Note** This project was evaluated using ACCURACY, however, other metrics were used as well for viewing. (again, please check out the other two ipynd files)
+
+
+# For plan & description, please read here:
 
 Computer Vision model using Convolutional Neural Networks to 
 classify guest's efforts on their costumes idea and be able to identify weather or not this costumes reaches the 

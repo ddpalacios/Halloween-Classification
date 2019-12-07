@@ -9,7 +9,7 @@
 **Head to directory --> "Model_Design & Testing"**
 **There is NO need to run ANY application. There is simply too much to load and will take a while to load each model**
 
-**SLIGHT UPDATE SINCE DECEMBER 6.  --> ADDED RUNNABLE TESTING SCRIPT. Please head to "Saved_Models" directory and RUN script *RUN_ME_halloween_testing.py* This may take a minute to load the model but it will give you results.
+**SLIGHT UPDATE SINCE DECEMBER 6.  --> ADDED RUNNABLE TESTING SCRIPT. Please head to "Saved_Models" directory and RUN script *RUN_ME_halloween_testing.py* This may take a minute to load the model but it will give you results.**
 
 However! Please check out model_78.ipynd **This notebook is where you will see how I prepared my own dataset as well as the resulted predictions with their cooresponding pictures**
 

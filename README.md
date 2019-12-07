@@ -13,7 +13,7 @@
 
 However! Please check out model_78.ipynd **This notebook is where you will see how I prepared my own dataset as well as the resulted predictions with their cooresponding pictures**
 
-**That is NOT ALL** Please also check out the other notebooks which are two diffrent model architectures and how I dealt with over/underfitting. This was a big issue and it is necceassry to view the diffrences.  
+**That is not all -->** Please also check out the other notebooks which are two diffrent model architectures and how I dealt with over/underfitting. This was a big issue and it is necceassry to view the diffrences.  
 
 **METRICS --> please view model_80.ipynd & model_73.ipynd There are outputs already given for you within each shell**
 

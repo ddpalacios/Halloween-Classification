@@ -11,20 +11,20 @@
 
 **SLIGHT UPDATE SINCE DECEMBER 6.  --> ADDED RUNNABLE TESTING SCRIPT. Please head to "Saved_Models" directory and RUN script *RUN_ME_halloween_testing.py* This may take a minute to load the model but it will give you results.**
 
-However! Please check out model_78.ipynd **This notebook is where you will see how I prepared my own dataset as well as the resulted predictions with their cooresponding pictures**
+However! Check out model_78.ipynd **This notebook is where you will see how I prepared my own dataset as well as the resulted predictions with their cooresponding pictures**
 
-**That is not all -->** Please also check out the other notebooks which are two diffrent model architectures and how I dealt with over/underfitting. This was a big issue and it is necceassry to view the diffrences.  
+**That is not all -->** Check out the other notebooks which are two diffrent model architectures and how I dealt with over/underfitting. This was a big issue and it is necceassry to view the diffrences.  
 
-**METRICS --> please view model_80.ipynd & model_73.ipynd There are outputs already given for you within each shell**
+**METRICS --> View model_80.ipynd & model_73.ipynd There are outputs already given for you within each shell**
 
-**Graphs & Saved models & Saved Data --> Please check out Directory "Saved_Models" as you will find sub folders for each cooresponding model. You will find:  Confusion matrix,  Accuracy graph results, and loss results (training & validation) ALL in PNG file as well as the model architecture used that recievied the following results**
+**Graphs & Saved models & Saved Data --> Check out Directory "Saved_Models" as you will find sub folders for each cooresponding model. You will find:  Confusion matrix,  Accuracy graph results, and loss results (training & validation) ALL in PNG file as well as the model architecture used that recievied the following results**
 
-**Note** python file "google_image_extractor.py" is the script I used to extract all images from google images
+**Note** Python file "google_image_extractor.py" is the script I used to extract all images from google images
 
-**Note** This project was evaluated using ACCURACY, however, other metrics were used as well for viewing. (again, please check out the other two ipynd files)
+**Note** This project was evaluated using ACCURACY, however, other metrics were used as well for viewing. (again, check out the othertwo ipynd files)
 
 
-# For plan & description, please read here:
+# For plan & description,read here:
 
 Computer Vision model using Convolutional Neural Networks to 
 classify guest's efforts on their costumes idea and be able to identify weather or not this costumes reaches the 

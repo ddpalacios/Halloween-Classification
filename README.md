@@ -1,9 +1,5 @@
 # Halloween-Classification
 
-
-
-# FOR VIEWING RESULTS PLEASE READ HERE
-
  *For Testing:* 
  - Please head to "Saved_Models" directory and RUN script *RUN_ME_halloween_testing.py* This may take a minute to load the model but it will give you results.**
  
